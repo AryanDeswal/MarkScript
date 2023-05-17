@@ -1,0 +1,16 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container">
+        <textarea name="output" id="output" cols="175" rows="20" readonly><%= html %></textarea>
+        <button class="btn btn-success" onclick="reload()">Refresh Page</button>
+        <button class="btn btn-success" onclick="copy()">Copy HTML</button>
+        <script>
+            const reload = () => {
+                location.reload();
+            }
+            function copy() {
+                let textarea = document.getElementById("output");
+                textarea.select();
+                document.execCommand("copy");
+            }
+        </script>
+    </div>

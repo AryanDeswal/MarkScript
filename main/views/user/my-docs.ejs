@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-7">
+            <h1 class="mb-4">My Documents</h1>
+            <ol class="row">
+                <% for(doc of docs){ %>
+                    <li class=" col-5 my-2">
+                        <div>
+                            <%= doc.name %>
+                        </div>
+                    </li>
+                    <div class="col-2 mb-2">
+                        <a class="btn btn btn-primary" target="_blank" rel="noopener" href="<%= doc.link %>">Edit</a>
+                    </div>
+                    <div class="col-2 mb-2">
+                        <form action="./delete/<%= doc.id %>" method="POST">
+                            <button class="btn btn btn-primary">Delete</button>
+                        </form>
+                    </div>
+                    <div class="col-2 mb-2">
+                        <form action="./generate/<%= doc._id %>" method="POST">
+                            <button class="btn btn btn-primary">Generate</button>
+                        </form>
+                    </div>
+                    <div class="col-1"></div>
+                    <% } %>
+            </ol>
+            <div>
+                <a class="btn btn-success" href="http://localhost:3000/" target="_blank">Create New Document</a>
+            </div>
+        </div>
+        <div class="col-5">
+            <h1>Add New Document Details</h1>
+            <form action="./my-docs" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="name">File Name</label>
+                    <input class="form-control" type="text" name="name" id="name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="link">File Link</label>
+                    <input class="form-control" type="text" name="link" id="link" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-success">Submit</button>
+        </div>
+    </div>
