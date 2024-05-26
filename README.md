@@ -1,4 +1,4 @@
-# MarkScript
+# MarkScript 
 
 MarkScript is a markdown editor designed to provide a seamless writing experience coupled with powerful collaboration features. Built with Quill for text editing, MarkScript offers a user-friendly interface for creating and editing markdown documents. With robust user authentication and real-time collaboration capabilities, MarkScript is go-to solution for collaborative markdown editing.
 
